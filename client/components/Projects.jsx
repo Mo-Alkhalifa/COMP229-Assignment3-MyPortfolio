@@ -1,4 +1,4 @@
-
+import { API_BASE_URL } from "../src/api";
 import { useEffect, useState } from "react";
 
 export default function Projects() {
@@ -6,7 +6,7 @@ export default function Projects() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/projects")
+        fetch(`${API_BASE_URL}/api/projects`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Could not load projects");

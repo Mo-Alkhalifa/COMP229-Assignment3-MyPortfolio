@@ -1,4 +1,4 @@
-
+import { API_BASE_URL } from "../src/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default function Signin() {
         setLoading(true);
 
         try {
-            const response = await fetch("http://localhost:3000/auth/signin", {
+            const response = await fetch(`${API_BASE_URL}/auth/signin`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -37,7 +37,7 @@ export default function Signin() {
             localStorage.setItem("token", data.token);
 
             // Check administrator access using the protected API
-            const adminResponse = await fetch("http://localhost:3000/api/users", {
+            const adminResponse = await fetch(`${API_BASE_URL}/api/users`, {
                 headers: {
                     Authorization: `Bearer ${data.token}`
                 }

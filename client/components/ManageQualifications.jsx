@@ -1,7 +1,7 @@
-
+import { API_BASE_URL } from "../src/api";
 import { useEffect, useState } from "react";
 
-const API = "http://localhost:3000/api/qualifications";
+const API = `${API_BASE_URL}/api/qualifications`;
 
 const emptyForm = {
     title: "",
