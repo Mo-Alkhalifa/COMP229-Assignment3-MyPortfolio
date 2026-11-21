@@ -4,6 +4,6 @@ client/dist/
 .env
 .DS_Store
 .history/
-
-
+client/cypress/videos/
+client/cypress/fixtures/example.json
 
