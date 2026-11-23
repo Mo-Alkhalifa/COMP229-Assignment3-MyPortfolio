@@ -13,7 +13,14 @@ import authRoutes from "./routes/auth.routes.js"
 
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5173",
+    process.env.CLIENT_URL
+].filter(Boolean);
+
+app.use(cors({
+    origin: allowedOrigins
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

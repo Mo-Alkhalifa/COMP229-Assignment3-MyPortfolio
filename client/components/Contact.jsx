@@ -1,4 +1,4 @@
-
+import { API_BASE_URL } from "../src/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export default function Contact() {
         setSuccess("");
 
         try {
-            const response = await fetch("http://localhost:3000/api/contacts", {
+            const response = await fetch(`${API_BASE_URL}/api/contacts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
